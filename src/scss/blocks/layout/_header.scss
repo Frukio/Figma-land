@@ -1,0 +1,112 @@
+.header {
+    position: absolute;
+    top: auto;
+    z-index: 15;
+    width: 100%;
+    color: #fff;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 30px;
+    }
+
+    &__logo {
+        @media (max-width: 420px) {
+            max-width: 120px;
+            
+        }
+    }
+
+    &__option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__button {
+        padding: 18px 46px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+        border: 1px solid #FFFFFF;
+        border-radius: 39px;
+        background-color: transparent;
+
+        @media (max-width: 576px) {
+            padding: 18px 29px;
+        }
+
+        @media (max-width: 420px) {
+            padding: 12px 20px;
+        }
+        
+    }
+
+    &__burger {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+        z-index: 30;
+        height: 55px;
+        width: 65px;
+        margin-right: 10px;
+        fill: #FFFFFF;
+        cursor: pointer;
+        transition: all .20s ease-in;
+        border-radius: 50%;
+        @media (max-width: 768px) {
+            display: flex;
+        }
+    }
+
+    &__lines,
+    &__lines::before,
+    &__lines::after{
+        height: 5px;
+        background: #fff;
+        border-radius: 2px;
+        transition: all .25s cubic-bezier(0.4, 0.0, 0.2, 1);;
+    }
+
+    &__lines::before{
+        width: 50px;
+        content: '';
+        position: absolute;
+        transform: translateY(-10px);
+    }
+
+    &__lines {
+        width: 40px;
+    }
+
+    &__lines::after{
+        width: 25px;
+        content: '';
+        position: absolute;
+        transform: translateY(10px);
+    }
+
+    &__burger.header__burger--active {
+        background: transparent;
+    }
+      
+    &__burger.header__burger--active::before {
+        transform: rotate(-90deg);
+    }
+      
+    &__burger.header__burger--active::after {
+        transform: rotate(90deg);
+    }
+      
+    &__burger.header__burger--active &__lines {
+        transform: rotate(360deg);
+    }
+    
+
+    
+
+    
+}
